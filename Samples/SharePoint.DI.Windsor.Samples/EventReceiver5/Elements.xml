@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListTemplateId="104">
+      <Receiver>
+        <Name>EventReceiver5WorkflowStarting</Name>
+        <Type>WorkflowStarting</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SharePoint.DI.Windsor.Samples.EventReceiver5.EventReceiver5</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+
+  </Receivers>
+</Elements>

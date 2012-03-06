@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="CKS.Dev.SharePoint.WcfService" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site, WebApplication, Farm, Package" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="WCFService1.svc" Target="ISAPI\SharePoint.DI.Windsor.Samples\" Type="RootFile" />
+  </Files>
+</ProjectItem>

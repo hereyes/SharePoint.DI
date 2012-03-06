@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="405a18e5-fe0e-4277-b144-04c0fb52183b" solutionId="405a18e5-fe0e-4277-b144-04c0fb52183b" resetWebServer="false" name="SharePoint.DI.Windsor.Samples" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="SharePoint.DI.Windsor.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\..\src\SharePoint.DI.Windsor\SharePoint.DI.Windsor.csproj" />
+    <customAssembly location="Castle.Windsor.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\packages\Castle.Windsor.3.0.0.4001\lib\net35\Castle.Windsor.dll" />
+    <customAssembly location="Castle.Core.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\packages\Castle.Core.3.0.0.4001\lib\net35\Castle.Core.dll" />
+    <customAssembly location="Microsoft.Practices.SharePoint.Common.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\lib\Microsoft.Practices.SharePoint\Microsoft.Practices.SharePoint.Common.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="b4430519-9dc6-4bf6-b9d1-8d5b98a94fd6" />
+    <featureReference itemId="e6616fcb-a58b-4201-81ed-aadc54a1390f" />
+    <featureReference itemId="f2b4d1a9-fae4-4102-830a-db1d8e9191bf" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="f7f8064d-4689-4331-86b8-2f4733c147a6" />
+    <projectItemReference itemId="bf646396-fed7-4e6d-8b83-44bba75d5604" />
+    <projectItemReference itemId="9adc9d50-04cf-4a01-a0c1-31fcb2adc85c" />
+  </projectItems>
+</package>

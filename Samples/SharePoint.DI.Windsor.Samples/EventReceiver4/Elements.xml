@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers >
+      <Receiver>
+        <Name>EventReceiver4SiteDeleting</Name>
+        <Type>SiteDeleting</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SharePoint.DI.Windsor.Samples.EventReceiver4.EventReceiver4</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>EventReceiver4WebAdding</Name>
+        <Type>WebAdding</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SharePoint.DI.Windsor.Samples.EventReceiver4.EventReceiver4</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>EventReceiver4SiteDeleted</Name>
+        <Type>SiteDeleted</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SharePoint.DI.Windsor.Samples.EventReceiver4.EventReceiver4</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>EventReceiver4WebProvisioned</Name>
+        <Type>WebProvisioned</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SharePoint.DI.Windsor.Samples.EventReceiver4.EventReceiver4</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+
+  </Receivers>
+</Elements>

@@ -1,0 +1,7 @@
+﻿<actions>
+  <remove path="configuration/system.web/httpModules/add[@name='SharePointDIWindsorHttpModule']"/>
+  <remove path="configuration/system.system.webServer/modules/add[@name='SharePointDIWindsorHttpModule']"/>
+  <add path="configuration/system.system.webServer/modules">
+    <add name="SharePointDIWindsorHttpModule"  type="SharePoint.DI.Windsor.SPWindsorHttpModule,  SharePoint.DI.Windsor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b90b738132b1478b"/>
+  </add>
+</actions>

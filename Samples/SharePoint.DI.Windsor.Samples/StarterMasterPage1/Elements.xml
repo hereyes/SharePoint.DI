@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MasterPages" Url="_catalogs/masterpage" Path="StarterMasterPage1" RootWebOnly="TRUE">
+    <File Url="StarterMasterPage1.master" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE">
+      <Property Name="ContentType" Value="$Resources:cmscore,contenttype_masterpage_name;" />
+      <Property Name="Title" Value="$Title$" />
+      <Property Name="PublishingPreviewImage" Value="$PublishingPreviewImage$" />
+      <Property Name="MasterPageDescription" Value="$MasterPageDescription$" />
+    </File>
+  </Module>
+</Elements>

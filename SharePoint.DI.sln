@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{572424A1-87BB-4D0B-86D0-31A404D9D6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Windsor.Tests", "Tests\SharePoint.DI.Windsor.Tests\SharePoint.DI.Windsor.Tests.csproj", "{46CE912C-7BCE-4532-98E5-2137523A93B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DBDC1B13-1B38-473B-9ED5-160CAF16AF58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{9AF6958F-408F-4647-91A6-C6905E4B4B37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft.Practices.SharePoint", "Microsoft.Practices.SharePoint", "{FCA83FC2-C7C1-4B17-AC89-DDDC3D963B7E}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Microsoft.Practices.SharePoint\Microsoft.Practices.SharePoint.Common.dll = lib\Microsoft.Practices.SharePoint\Microsoft.Practices.SharePoint.Common.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{6C838ADE-6708-4FF3-AF8A-FC80C89BF5D1}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Ninject\Ninject.dll = lib\Ninject\Ninject.dll
+		lib\Ninject\Ninject.MockingKernel.dll = lib\Ninject\Ninject.MockingKernel.dll
+		lib\Ninject\Ninject.MockingKernel.Moq.dll = lib\Ninject\Ninject.MockingKernel.Moq.dll
+		lib\Ninject\Ninject.MockingKernel.NSubstitute.dll = lib\Ninject\Ninject.MockingKernel.NSubstitute.dll
+		lib\Ninject\Ninject.MockingKernel.RhinoMock.dll = lib\Ninject\Ninject.MockingKernel.RhinoMock.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Windsor", "src\SharePoint.DI.Windsor\SharePoint.DI.Windsor.csproj", "{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{DE2F6F17-2F64-4D47-BA15-164BD0E0C517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Windsor.Samples", "Samples\SharePoint.DI.Windsor.Samples\SharePoint.DI.Windsor.Samples.csproj", "{5625F64C-2F41-4139-80CC-7A88ACB21DF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554} = {AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Common", "src\SharePoint.DI.Common\SharePoint.DI.Common.csproj", "{A53C00D6-82EE-461A-AD81-2A1634DF7B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Common.Tests", "SharePoint.DI.Common.Tests\SharePoint.DI.Common.Tests.csproj", "{8BD2A48F-3377-4E1F-B0F8-4249B613343C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CE912C-7BCE-4532-98E5-2137523A93B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CE912C-7BCE-4532-98E5-2137523A93B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CE912C-7BCE-4532-98E5-2137523A93B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CE912C-7BCE-4532-98E5-2137523A93B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BD2A48F-3377-4E1F-B0F8-4249B613343C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD2A48F-3377-4E1F-B0F8-4249B613343C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD2A48F-3377-4E1F-B0F8-4249B613343C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD2A48F-3377-4E1F-B0F8-4249B613343C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46CE912C-7BCE-4532-98E5-2137523A93B6} = {572424A1-87BB-4D0B-86D0-31A404D9D6F2}
+		{8BD2A48F-3377-4E1F-B0F8-4249B613343C} = {572424A1-87BB-4D0B-86D0-31A404D9D6F2}
+		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554} = {DBDC1B13-1B38-473B-9ED5-160CAF16AF58}
+		{A53C00D6-82EE-461A-AD81-2A1634DF7B65} = {DBDC1B13-1B38-473B-9ED5-160CAF16AF58}
+		{FCA83FC2-C7C1-4B17-AC89-DDDC3D963B7E} = {9AF6958F-408F-4647-91A6-C6905E4B4B37}
+		{6C838ADE-6708-4FF3-AF8A-FC80C89BF5D1} = {9AF6958F-408F-4647-91A6-C6905E4B4B37}
+		{5625F64C-2F41-4139-80CC-7A88ACB21DF2} = {DE2F6F17-2F64-4D47-BA15-164BD0E0C517}
+	EndGlobalSection
+EndGlobal
