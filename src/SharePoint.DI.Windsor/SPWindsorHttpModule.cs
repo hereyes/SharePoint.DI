@@ -37,7 +37,6 @@ namespace SharePoint.DI.Windsor
                 return;
             }
 
-
             container = new WindsorContainer();
             if (container.LoadInstallers() > 0)
             {

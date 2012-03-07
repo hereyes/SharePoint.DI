@@ -235,6 +235,10 @@
     <Content Include="Workflow2\Elements.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\SharePoint.DI.Common\SharePoint.DI.Common.csproj">
+      <Project>{A53C00D6-82EE-461A-AD81-2A1634DF7B65}</Project>
+      <Name>SharePoint.DI.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\SharePoint.DI.Windsor\SharePoint.DI.Windsor.csproj">
       <Project>{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554}</Project>
       <Name>SharePoint.DI.Windsor</Name>

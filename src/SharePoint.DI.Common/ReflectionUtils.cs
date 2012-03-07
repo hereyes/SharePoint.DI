@@ -392,5 +392,59 @@ namespace SharePoint.DI.Common
         {
             return assemblyName.StartsWith(applicationName);
         }
+
+
+        public static string[] GetAssemblyNames(Assembly[] assemblies)
+        {
+            List<string> assemblyNames = new List<string>();
+            foreach (Assembly assembly in assemblies)
+            {
+                assemblyNames.Add(assembly.FullName);
+            }
+            return assemblyNames.ToArray();
+        }
+
+        public static string[] GetTypeNames<T>(T[] installers)
+        {
+            List<string> installerNames = new List<string>();
+            foreach (T installer in installers)
+            {
+                installerNames.Add(installer.GetType().AssemblyQualifiedName);
+            }
+            return installerNames.ToArray();
+        }
+
+        public static Assembly[] GetAssembliesFromNames(string[] assemblyNames)
+        {
+            List<Assembly> assemblies = new List<Assembly>();
+            foreach (string assemblyName in assemblyNames)
+            {
+                var assembly = GetAssemblyNamed(assemblyName);
+                assemblies.Add(assembly);
+            }
+            return assemblies.ToArray();
+        }
+
+        public static T[] GetInstallersFromTypeNames<T>(string[] typeNames)
+        {
+            List<T> installers = new List<T>();
+            foreach (string typeName in typeNames)
+            {
+                var installer = Type.GetType(typeName).CreateInstance<T>();
+                installers.Add(installer);
+            }
+            return installers.ToArray();
+        }
+
+        public static ICollection<Type> GetTypes<T>(T[] objects)
+        {
+            List<Type> types = new List<Type>();
+            foreach (T obj in objects)
+            {
+                var type = obj.GetType();
+                types.Add(type);
+            }
+            return types;
+        }
     }
 }

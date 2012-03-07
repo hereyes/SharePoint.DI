@@ -21,12 +21,12 @@ namespace SharePoint.DI.Windsor
         /// <param name="container"></param>
         /// <param name="instance">the object</param>
         /// <returns>returns the same object with the selected properties injected</returns>
-        public static void InjectProperties(this WindsorContainer container, object instance)
+        public static void InjectProperties(this IWindsorContainer container, object instance)
         {
             InjectDependencies(container, instance);
         }
 
-        public static void InjectDependencies(WindsorContainer container, object instance)
+        public static void InjectDependencies(IWindsorContainer container, object instance)
         {
             foreach (var property in instance.GetType().GetProperties())
             {
@@ -39,7 +39,7 @@ namespace SharePoint.DI.Windsor
             }
         }
 
-        public static int LoadInstallers(this WindsorContainer container)
+        public static int LoadInstallers(this IWindsorContainer container)
         {
             WindsorConfigManager config = new WindsorConfigManager(new ConfigManager());
             Assembly[] installerAssemblies = default(Assembly[]);

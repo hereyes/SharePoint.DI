@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Castle.MicroKernel.Registration;
-using Castle.Windsor;
-using FizzWare.NBuilder;
+﻿using Castle.MicroKernel.Registration;
 using Machine.Specifications;
 using Microsoft.Practices.SharePoint.Common.Configuration;
 using Moq;
 using Ninject;
 using Ninject.MockingKernel.Moq;
-using Ploeh.AutoFixture;
+using SharePoint.DI.Common;
 using SharePoint.DI.Windsor.Tests.TestModels;
 using It = Machine.Specifications.It;
 
@@ -111,7 +104,7 @@ namespace SharePoint.DI.Windsor.Tests
 
         private It and_string_array_should_equal_the_string_representation_of_added_installers = () =>
         {
-            _registeredInstallers.ShouldEqual(_config.GetTypeNames(_installersToRegister));
+            _registeredInstallers.ShouldEqual(ReflectionUtil.GetTypeNames(_installersToRegister));
         };
     }
 
@@ -129,7 +122,7 @@ namespace SharePoint.DI.Windsor.Tests
             _mocker = new MoqMockingKernel();
             _config = _mocker.Get<WindsorConfigManager>();
             _installerToRemove = new TestInstaller2();
-            _registeredInstallers = _config.GetTypeNames(new IWindsorInstaller[]{new TestInstaller1(), new TestInstaller2(), new TestInstaller3() });
+            _registeredInstallers = ReflectionUtil.GetTypeNames(new IWindsorInstaller[]{new TestInstaller1(), new TestInstaller2(), new TestInstaller3() });
 
             _configMock = _mocker.GetMock<IConfigManager>();
             _configMock.Setup(config => config.GetPropertyBag(Moq.It.IsAny<ConfigLevel>()))
@@ -162,7 +155,7 @@ namespace SharePoint.DI.Windsor.Tests
 
         private It and_string_array_should_not_contain_the_removed_assembly = () =>
         {
-            _registeredInstallers.ShouldNotContain(_config.GetTypeNames(new IWindsorInstaller[] { _installerToRemove }));
+            _registeredInstallers.ShouldNotContain(ReflectionUtil.GetTypeNames(new IWindsorInstaller[] { _installerToRemove }));
         };
     }
 }

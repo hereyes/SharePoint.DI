@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Castle.Windsor;
-using FizzWare.NBuilder;
+﻿using System.Reflection;
 using Machine.Specifications;
 using Microsoft.Practices.SharePoint.Common.Configuration;
 using Moq;
 using Ninject;
 using Ninject.MockingKernel.Moq;
 using Ploeh.AutoFixture;
+using SharePoint.DI.Common;
 using It = Machine.Specifications.It;
 
 namespace SharePoint.DI.Windsor.Tests
@@ -109,7 +104,7 @@ namespace SharePoint.DI.Windsor.Tests
 
         private It and_it_should_be_the_equal_to_the_list_of_added_assemblies = () =>
         {
-            _installAssemblies.ShouldEqual(_config.GetAssemblyNames(_assembliesToAdd));
+            _installAssemblies.ShouldEqual(ReflectionUtil.GetAssemblyNames(_assembliesToAdd));
         };
 
     }

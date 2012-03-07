@@ -1,11 +1,6 @@
-﻿using System.Reflection;
-using Castle.MicroKernel.Registration;
+﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Machine.Specifications;
-using Microsoft.Practices.SharePoint.Common.Configuration;
-using Moq;
-using Ninject;
-using Ninject.MockingKernel.Moq;
 using SharePoint.DI.Windsor.Tests.Stubs;
 using It = Machine.Specifications.It;
 

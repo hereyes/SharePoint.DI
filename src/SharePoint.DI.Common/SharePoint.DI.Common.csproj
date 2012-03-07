@@ -37,6 +37,10 @@
     <AssemblyOriginatorKeyFile>SharePoint.DI.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.SharePoint.Common">
+      <HintPath>..\..\lib\Microsoft.Practices.SharePoint\Microsoft.Practices.SharePoint.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyFilter.cs" />
+    <Compile Include="DIConfigManagerBase.cs" />
+    <Compile Include="IDIConfigManager.cs" />
+    <Compile Include="Internals\AssemblyFilter.cs" />
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="FromAssembly.cs" />
-    <Compile Include="IAssemblyProvider.cs" />
+    <Compile Include="Internals\IAssemblyProvider.cs" />
     <Compile Include="Internals\ILockHolder.cs" />
     <Compile Include="Internals\IUpgradeableLockHolder.cs" />
     <Compile Include="Internals\Lock.cs" />
