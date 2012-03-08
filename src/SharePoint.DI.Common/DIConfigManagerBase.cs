@@ -337,7 +337,7 @@ namespace SharePoint.DI.Common
         /// removes installers only at the farm level, without attempting to remove them from the child web application, sites, or webs
         /// </summary>
         /// <param name="installers"></param>
-        public void RemoveOnlyFromSPFarm(T[] installers)
+        public void RemoveOnlyFromSPFarm(params T[] installers)
         {
             IPropertyBag bag = _configManager.GetPropertyBag(ConfigLevel.CurrentSPFarm);
             RemoveInstaller(bag, installers);
@@ -374,7 +374,7 @@ namespace SharePoint.DI.Common
         /// </summary>
         /// <param name="site"></param>
         /// <param name="Installers"></param>
-        public void RemoveOnlyFromSPSite(SPSite site, T[] Installers)
+        public void RemoveOnlyFromSPSite(SPSite site, params T[] Installers)
         {
             _configManager.SetWeb(site.RootWeb);
             IPropertyBag bag = _configManager.GetPropertyBag(ConfigLevel.CurrentSPSite);
@@ -403,7 +403,7 @@ namespace SharePoint.DI.Common
         /// </summary>
         /// <param name="webApp"></param>
         /// <param name="Installers"></param>
-        public void RemoveOnlyFromSPWebApplication(SPWebApplication webApp, T[] Installers)
+        public void RemoveOnlyFromSPWebApplication(SPWebApplication webApp, params T[] Installers)
         {
             if (webApp.Sites.Count > 0)
             {

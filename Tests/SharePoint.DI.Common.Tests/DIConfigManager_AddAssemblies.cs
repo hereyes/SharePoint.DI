@@ -1,43 +1,47 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Text;
 using Machine.Specifications;
 using Microsoft.Practices.SharePoint.Common.Configuration;
 using Moq;
 using Ninject;
 using Ninject.MockingKernel.Moq;
+using Ninject.Parameters;
 using Ploeh.AutoFixture;
-using SharePoint.DI.Common;
 using It = Machine.Specifications.It;
 
-namespace SharePoint.DI.Windsor.Tests
+namespace SharePoint.DI.Common.Tests
 {
-    [Subject("WindsorConfigManager - AddInstallerAssembly")]
+    [Subject("DIConfigManager - AddInstallerAssembly")]
     public class When_No_Installers_are_loaded_in_SharePoint_and_one_assembly_is_added
     {
         private static MoqMockingKernel _mocker;
-        private static WindsorConfigManager _config;
+        private static DIConfigManagerBase<object> _config;
         private static string[] _installAssemblies;
         private static Mock<IConfigManager> _configMock;
+        private static string propertyKey = "TestKey";
 
         private Establish ctx = () =>
         {
             _mocker = new MoqMockingKernel();
-            _config = _mocker.Get<WindsorConfigManager>();
-            _installAssemblies = new string[] {};
+            _config = _mocker.Get<DIConfigManagerBase<object>>(new ConstructorArgument("assemblyPropKey", propertyKey), new ConstructorArgument("installerPropKey", ""));
+            _installAssemblies = new string[] { };
 
             _configMock = _mocker.GetMock<IConfigManager>();
             _configMock.Setup(config => config.GetPropertyBag(Moq.It.IsAny<ConfigLevel>()))
                 .Returns(new Mock<IPropertyBag>().Object);
 
             _configMock.Setup(
-                config => config.SetInPropertyBag(Constants.WindsorInstallerAssemblies, Moq.It.IsAny<string[]>(),
+                config => config.SetInPropertyBag(propertyKey, Moq.It.IsAny<string[]>(),
                                                   Moq.It.IsAny<IPropertyBag>()))
                 .Callback((string key, object value, IPropertyBag bag) =>
                 {
-                    _installAssemblies = (string[]) value;
+                    _installAssemblies = (string[])value;
                 });
 
             _configMock.Setup(config =>
-                              config.GetFromPropertyBag<string[]>(Constants.WindsorInstallerAssemblies,
+                              config.GetFromPropertyBag<string[]>(propertyKey,
                                                                   Moq.It.IsAny<IPropertyBag>()))
                 .Returns(_installAssemblies);
         };
@@ -62,19 +66,20 @@ namespace SharePoint.DI.Windsor.Tests
     public class When_No_Installers_are_loaded_in_SharePoint_and_several_assemblies_are_added
     {
         private static MoqMockingKernel _mocker;
-        private static WindsorConfigManager _config;
+        private static DIConfigManagerBase<object> _config;
         private static string[] _installAssemblies;
         private static Assembly[] _assembliesToAdd;
         private static Mock<IConfigManager> _configMock;
+        private static string propertyKey = "TestKey";
 
         private Establish ctx = () =>
         {
             _mocker = new MoqMockingKernel();
-            _config = _mocker.Get<WindsorConfigManager>();
+            _config = _mocker.Get<DIConfigManagerBase<object>>(new ConstructorArgument("assemblyPropKey", propertyKey), new ConstructorArgument("installerPropKey", ""));
             Fixture fixture = new Fixture();
             fixture.RepeatCount = 7;
-            _assembliesToAdd = new Assembly[]{Assembly.GetExecutingAssembly(), _config.GetType().Assembly};
-            _installAssemblies = new string[] {};
+            _assembliesToAdd = new Assembly[] { Assembly.GetExecutingAssembly(), _config.GetType().Assembly };
+            _installAssemblies = new string[] { };
 
             _configMock = _mocker.GetMock<IConfigManager>();
             _configMock.Setup(config => config.GetPropertyBag(Moq.It.IsAny<ConfigLevel>()))
@@ -82,15 +87,15 @@ namespace SharePoint.DI.Windsor.Tests
 
             _configMock.Setup(
                 config =>
-                config.SetInPropertyBag(Constants.WindsorInstallerAssemblies, Moq.It.IsAny<string[]>(),
+                config.SetInPropertyBag(propertyKey, Moq.It.IsAny<string[]>(),
                                         Moq.It.IsAny<IPropertyBag>()))
                 .Callback((string key, object value, IPropertyBag bag) =>
                 {
-                    _installAssemblies = (string[]) value;
+                    _installAssemblies = (string[])value;
                 });
 
             _configMock.Setup(config =>
-                              config.GetFromPropertyBag<string[]>(Constants.WindsorInstallerAssemblies,
+                              config.GetFromPropertyBag<string[]>(propertyKey,
                                                                   Moq.It.IsAny<IPropertyBag>()))
                 .Returns(_installAssemblies);
         };

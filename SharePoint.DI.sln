@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Windsor.Sampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Common", "src\SharePoint.DI.Common\SharePoint.DI.Common.csproj", "{A53C00D6-82EE-461A-AD81-2A1634DF7B65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint.DI.Common.Tests", "Tests\SharePoint.DI.Common.Tests\SharePoint.DI.Common.Tests.csproj", "{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,12 +60,17 @@ Global
 		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53C00D6-82EE-461A-AD81-2A1634DF7B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{46CE912C-7BCE-4532-98E5-2137523A93B6} = {572424A1-87BB-4D0B-86D0-31A404D9D6F2}
+		{5A2CA136-C3D6-48D0-8611-FC2FE4E35E63} = {572424A1-87BB-4D0B-86D0-31A404D9D6F2}
 		{AD1BFCB5-BE09-4AC3-BE4F-9BC743CB8554} = {DBDC1B13-1B38-473B-9ED5-160CAF16AF58}
 		{A53C00D6-82EE-461A-AD81-2A1634DF7B65} = {DBDC1B13-1B38-473B-9ED5-160CAF16AF58}
 		{FCA83FC2-C7C1-4B17-AC89-DDDC3D963B7E} = {9AF6958F-408F-4647-91A6-C6905E4B4B37}

@@ -130,9 +130,7 @@
     <Compile Include="Workflow1\Workflow1.Designer.cs">
       <DependentUpon>Workflow1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Workflow2\Workflow2.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Workflow2\Workflow2.cs" />
     <Compile Include="Workflow2\Workflow2.Designer.cs">
       <DependentUpon>Workflow2.cs</DependentUpon>
     </Compile>
